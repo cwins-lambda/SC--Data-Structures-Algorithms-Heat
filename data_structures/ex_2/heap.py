@@ -4,7 +4,8 @@ def heapsort(arr):
   for num in arr:
     heaped.insert(num)
   while heaped.get_size() > 0:
-    new_arr.append(heaped.delete())
+    new_arr.insert(0, heaped.delete())
+  return new_arr
 
  
 
