@@ -16,10 +16,16 @@ class BinarySearchTree:
 
 
 
-
-
   def breadth_first_for_each(self, cb):
-    pass
+    queue = [self]
+    while len(queue) > 0:
+      current = queue.pop(0)
+      cb(current.value)
+      if current.left is not None:
+        queue.append(current.left)
+      if current.right is not None:
+        queue.append(current.right)
+
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
